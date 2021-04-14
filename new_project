@@ -18,7 +18,7 @@ then
     echo -e "${GREEN}Project Created!"
     echo -e "${YELLOW}Pushing Initial Commit to GitHub..."
     git branch -M main
-    git remote add origin https://github.com/SumitKumar1307/$1.git
+    git remote add origin https://github.com/$2/$1.git
     git push origin main
 elif (($# > 1))
 then
