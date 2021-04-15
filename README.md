@@ -1,15 +1,30 @@
+**Installation**
+
 Follow these steps to run this script:
-Edit the script.py file and replace access_token with your github access token after doing that run the following commands
 ```bash
 $ git clone https://github.com/SumitKumar1307/Project-Automation.git
 $ cd Project-Automation
-$ chmod 555 new_project
-$ pip install -r requirements.txt
+$ chmod +x new_project config
 ```
 
-**Additional**
-If you want to be able to run this command from any directory then do the following commands after doing the commands above:
+**Configuration**
+
 ```bash
-$ sudo cp new_project /bin/new_project
-$ sudo cp script.py /bin/script.py
+$ ./config
+```
+Enter your Github Access Token with at-least the following permissions: repo, user
+
+**Usage**
+Using the script is really simple, you just have to do:
+
+```bash
+$ ./new_project <project_name>
+```
+**TroubleShooting**
+If you run into any then here are a few things to try out:
+
+1. A repository with your project name does not already exists for your accout.
+2. You Have Git Installed.
+3. Run ./config if you haven't already done that.
+4. Make sure that you have made both new_project and config files executable, if not then the steps are mentioned in Installation.
 ```
