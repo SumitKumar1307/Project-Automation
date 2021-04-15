@@ -1,13 +1,15 @@
 GREEN='\033[0;32m'
 YELLOW='\033[1;33m'
+name=$(python ./script.py 1)
 
-if (($# == 2))
+if (($# == 1))
 then
+    
     echo -e "${YELLOW}Creating A New Github Repository..."
     python ./script.py $1
     echo -e "${GREEN}Created A New Github Repository"
     echo -e "${YELLOW}Creating a New Project Directory..."
-    mkdir ~/Documents/Projects/$1
+    mkdir -p ~/Documents/Projects/$1
     echo -e "${GREEN}Created A New Project Directory"
     cd ~/Documents/Projects/$1
     touch README.md
@@ -18,9 +20,9 @@ then
     echo -e "${GREEN}Project Created!"
     echo -e "${YELLOW}Pushing Initial Commit to GitHub..."
     git branch -M main
-    git remote add origin https://github.com/$2/$1.git
+    git remote add origin https://github.com/$name/$1.git
     git push origin main
-elif (($# > 2))
+elif (($# > 1))
 then
     RED='\033[0;31m'
     echo -e "${RED}Too Many Arguments!"
