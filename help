@@ -1,4 +1,0 @@
-Few tips for troubleshooting:
-1. Make Sure That You Have Entered The Correct Token, If not then re-run ./config
-2. Make sure that a repository with the name of your project does not already exists!
-3. Run ./config and enter your token if you haven't already done that.
