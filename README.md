@@ -4,6 +4,7 @@ Follow these steps to run this script:
 ```bash
 $ git clone https://github.com/SumitKumar1307/Project-Automation.git
 $ cd Project-Automation
+$ pip install -r requirements.txt
 $ chmod +x new_project config
 ```
 
