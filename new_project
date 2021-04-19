@@ -4,24 +4,28 @@ name=$(python ./script.py 1)
 
 if (($# == 1))
 then
-    
-    echo -e "${YELLOW}Creating A New Github Repository..."
-    python ./script.py $1
-    echo -e "${GREEN}Created A New Github Repository"
-    echo -e "${YELLOW}Creating a New Project Directory..."
-    mkdir -p ~/Documents/Projects/$1
-    echo -e "${GREEN}Created A New Project Directory"
-    cd ~/Documents/Projects/$1
-    touch README.md
-    echo -e "${YELLOW}Creating A New Git Repository..."
-    git init
-    git add .
-    git commit -m "Initial Commit"
-    echo -e "${GREEN}Project Created!"
-    echo -e "${YELLOW}Pushing Initial Commit to GitHub..."
-    git branch -M main
-    git remote add origin https://github.com/$name/$1.git
-    git push origin main
+    if [$1 == "--help"]
+    then
+        echo "Commands"
+    else    
+       echo -e "${YELLOW}Creating A New Github Repository..."
+       python ./script.py $1
+       echo -e "${GREEN}Created A New Github Repository"
+       echo -e "${YELLOW}Creating a New Project Directory..."
+       mkdir -p ~/Documents/Projects/$1
+       echo -e "${GREEN}Created A New Project Directory"
+       cd ~/Documents/Projects/$1
+       touch README.md
+       echo -e "${YELLOW}Creating A New Git Repository..."
+       git init
+       git add .
+       git commit -m "Initial Commit"
+       echo -e "${GREEN}Project Created!"
+       echo -e "${YELLOW}Pushing Initial Commit to GitHub..."
+       git branch -M main
+       git remote add origin https://github.com/$name/$1.git
+       git push origin main
+    fi
 elif (($# > 1))
 then
     RED='\033[0;31m'
