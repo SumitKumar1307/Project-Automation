@@ -4,9 +4,17 @@ name=$(python ./script.py 1)
 
 if (($# == 1))
 then
-    if [$1 == "--help"]
+    if [ "$1" = "--help" ]
     then
-        echo "Commands"
+        echo "Usage:"
+        echo "Type '/path/to/new_project <project_name>' to use script"
+	echo "Trouble Shooting:"
+       	echo "If you get an github error about bad credentials make sure the following things:"
+	echo "You have entered the right Token,"
+	echo "You have given the right permissions to view your username and create and repo to your github token"
+	echo "A repository dose not already exists with the same name as your project"
+	echo ""
+	echo "If you get an error regarding the config module in decouple try `pip3 uninstall decouple` and re-run the setup file"
     else    
        echo -e "${YELLOW}Creating A New Github Repository..."
        python ./script.py $1
